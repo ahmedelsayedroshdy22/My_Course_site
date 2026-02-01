@@ -1,25 +1,164 @@
----
-permalink: /404.html
-layout: page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Zayed | Professor & Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #d4a574;
+            --bg: #fafaf8;
+            --border: #e5e5e0;
+        }
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<div class="container">
-  <h1>404</h1>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--bg);
+            color: var(--primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+        .container {
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+            margin-bottom: 3rem;
+            animation: slideIn 0.8s ease-out 0.3s backwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: fadeUp 0.8s ease-out 0.5s backwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--secondary);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: fadeUp 0.8s ease-out 0.7s backwards;
+        }
+
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, var(--border), transparent);
+            margin: 3rem 0;
+            animation: fadeUp 0.8s ease-out 0.9s backwards;
+        }
+
+        .description {
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            color: var(--secondary);
+            line-height: 1.9;
+            max-width: 750px;
+            animation: fadeUp 0.8s ease-out 1.1s backwards;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(212, 165, 116, 0.03) 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+            }
+
+            .accent-line {
+                width: 60px;
+                margin-bottom: 2rem;
+            }
+
+            h1 {
+                margin-bottom: 1rem;
+            }
+
+            .subtitle {
+                margin-bottom: 1.5rem;
+            }
+
+            .separator {
+                margin: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    
+    <div class="container">
+        <div class="accent-line"></div>
+        
+        <h1>Ahmed Zayed</h1>
+        
+        <div class="subtitle">
+            Professor, software engineer, principal investigator (PI), mentor.
+        </div>
+        
+        <div class="separator"></div>
+        
+        <p class="description">
+            <span class="highlight">Award-winning faculty member</span> for teaching and research excellence at the undergraduate and graduate levels. Detail-oriented software team lead with experience contributing to open source projects.
+        </p>
+    </div>
+</body>
+</html>
